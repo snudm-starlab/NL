@@ -1,3 +1,5 @@
+#codes for executing preprocessing
+
 cd examples/translation/ \
 
 bash prepare-iwslt14.sh \

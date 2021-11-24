@@ -33,7 +33,6 @@ def distillation_loss(y, labels, teacher_scores, T, alpha, reduction_kd='batchme
         d_loss = 0.0
     nll_loss = F.cross_entropy(y, labels, reduction=reduction_nll)
     tol_loss = alpha * d_loss + (1.0 - alpha) * nll_loss
-    # print('in func:', d_loss.item(), nll_loss.item(), alpha, tol_loss.item())
     return tol_loss, d_loss, nll_loss
 
 def patience_loss(teacher_patience, student_patience, normalized_patience=False):
@@ -41,8 +40,8 @@ def patience_loss(teacher_patience, student_patience, normalized_patience=False)
     if normalized_patience:
         teacher_patience = F.normalize(teacher_patience, p=2, dim=2)
         student_patience = F.normalize(student_patience, p=2, dim=2)
-    #return F.mse_loss(teacher_patience.float(), student_patience.float()).half()
-    return F.mse_loss(teacher_patience.float(), student_patience.float())
+     
+    return F.mse_loss(teacher_patience.float(), student_patience.float()) # F.mse_loss(teacher_patience.float(), student_patience.float()).half()
     # diff = (teacher_patience - student_patience).pow(2).sum()
     # const = math.sqrt(teacher_patience.numel())
     # return diff / const / const

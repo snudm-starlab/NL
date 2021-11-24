@@ -38,7 +38,9 @@ logger = logging.getLogger(__name__)
 parser = default_parser()
 DEBUG = True
 logger.info("IN CMD MODE")
+
 args = parser.parse_args()
+
 train_seed_fixed = args.train_seed
 saving_criterion_acc_fixed = args.saving_criterion_acc
 saving_criterion_loss_fixed = args.saving_criterion_loss
@@ -55,7 +57,6 @@ learning_rate_fixed = args.learning_rate
 teacher_prediction_fixed = args.teacher_prediction
 num_train_epochs_fixed = args.num_train_epochs
 
-#teacher_num = args.teacher_numb
 task_name_fixed = args.task
 if DEBUG:
     logger.info("IN DEBUG MODE")

@@ -1,5 +1,6 @@
 """
 File used to initialize models and make dataloaders. Mainly based on [GitHub repository](https://github.com/intersun/PKD-for-BERT-Model-Compression) for [Patient Knowledge Distillation for BERT Model Compression](https://arxiv.org/abs/1908.09355).
+for tasks 'race' and 'glue'
 """
 from utils.nli_data_processing import init_glue_model, get_glue_task_dataloader, init_glue_model_NL, get_glue_task_dataloader_pretrain5
 from utils.race_data_processing import init_race_model, get_race_task_dataloader

@@ -237,7 +237,6 @@ elif args.kd_model.lower() == 'kd.full':
 
     assert len(weights) == num_fc_layer, 'number of weights and number of FC layer must be equal to each other'
 
-    # weights = torch.tensor(np.array([1, 1, 1, 1, 2, 6])/12, dtype=torch.float, device=device, requires_grad=False)
     if args.fp16:
         weights = weights.half()
     student_encoder = BertForSequenceClassificationEncoder(student_config, output_all_encoded_layers=True,
@@ -258,7 +257,6 @@ n_param_student = count_parameters(student_encoder) + count_parameters(student_c
 logger.info('number of layers in student model = %d' % n_student_layer)
 logger.info('num parameters in student model are %d and %d' % (count_parameters(student_encoder), count_parameters(student_classifier)))
 
-
 #########################################################################
 # Prepare optimizer
 #########################################################################
@@ -274,11 +272,7 @@ elif task_name == 'sst-2':
 else:
     log_per_step = 200 
 
-
-
-if args.do_train:
-    
-    
+if args.do_train:   
 ##############################################################################################################################################    
     print('*'*77)    
         # Determine the layers to freeze

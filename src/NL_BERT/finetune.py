@@ -441,14 +441,7 @@ if args.do_train:
                 
                 optimizer.step()
                 optimizer.zero_grad()
-                global_step += 1
-
-#             if global_step % args.log_every_step == 0:
-#                 print('{},{},{},{},{},{},{},{}'.format(epoch+1, global_step, step, tr_acc / nb_tr_examples,
-#                                                        tr_loss / nb_tr_examples, tr_kd_loss / nb_tr_examples,
-#                                                        tr_ce_loss / nb_tr_examples, tr_loss_pt / nb_tr_examples),
-#                       file=log_train)
-            
+                global_step += 1          
             
             if global_step % 50 == 0:
                 if args.freeze_layer is not None:

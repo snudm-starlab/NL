@@ -30,7 +30,6 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-
 #########################################################################
 # Prepare Parser
 #########################################################################

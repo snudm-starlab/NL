@@ -13,15 +13,14 @@
 #
 ################################################################################
 """
-Environment file. Mainly based on [GitHub repository](https://github.com/intersun/PKD-for-BERT-Model-Compression) for [Patient Knowledge Distillation for BERT Model Compression](https://arxiv.org/abs/1908.09355).
+Environment file. Mainly based on [GitHub repository](https://github.com/intersun/PKD-for-BERT-Model-Compression) for
+[Patient Knowledge Distillation for BERT Model Compression](https://arxiv.org/abs/1908.09355).
 """
 
 import os
 import logging
 
-
 logger = logging.getLogger(__name__)
-
 
 PROJECT_FOLDER = os.path.dirname(__file__)
 HOME_DATA_FOLDER = os.path.join(PROJECT_FOLDER, 'data')

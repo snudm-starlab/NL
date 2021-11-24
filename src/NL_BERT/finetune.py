@@ -142,7 +142,6 @@ args_dict = vars(args)
 for a in args_dict:
     logger.info('%-28s  %s' % (a, args_dict[a]))
     
-    
 #########################################################################
 # Prepare  Data
 ##########################################################################
@@ -322,7 +321,6 @@ if args.do_train:
                              warmup=args.warmup_proportion,
                              t_total=num_train_optimization_steps)
 
-
 #########################################################################
 # Model Training
 #########################################################################
@@ -482,15 +480,7 @@ if args.do_train:
                 if 'race' in task_name:
                     result = eval_model_dataloader_nli(student_encoder, student_classifier, eval_dataloader, device, False)
                 else:
-                    test_res = eval_model_dataloader_nli_finetune(args.task_name.lower(), eval_label_ids, student_encoder, student_classifier, eval_dataloader, args.kd_model, num_labels, device, args.weights, args.fc_layer_idx, output_mode)
-                    
-#                 if task_name == 'cola':
-#                     print('{},{},{}'.format(epoch+1, test_res['mcc'], test_res['eval_loss']), file=log_eval)
-#                 elif task_name == 'mrpc':
-#                     print('{},{},{}'.format(epoch+1, test_res['f1'], test_res['eval_loss']), file=log_eval)
-#                 else:
-#                     print('{},{},{}'.format(epoch+1, test_res['acc'], test_res['eval_loss']), file=log_eval)
-                
+                    test_res = eval_model_dataloader_nli_finetune(args.task_name.lower(), eval_label_ids, student_encoder, student_classifier, eval_dataloader, args.kd_model, num_labels, device, args.weights, args.fc_layer_idx, output_mode)                
                 
                 # Saving checkpoints when the conditions below are met.
                 if task_name == 'cola':

@@ -122,7 +122,7 @@ class Trainer_DL(object):
         self._wrapped_criterion = None
         self._wrapped_model = None
 
-        # TODO(myleott): support tpu
+        # TODO(myleott): support TPU
         if self.cuda and self.data_parallel_world_size > 1:
             self._grad_norm_buf = torch.cuda.DoubleTensor(self.data_parallel_world_size)
         else:

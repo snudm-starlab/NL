@@ -1,3 +1,5 @@
+# demo codes for NL_BERT
+
 python ../finetune.py \
 --task 'MRPC' \
 --train_type 'ft' \

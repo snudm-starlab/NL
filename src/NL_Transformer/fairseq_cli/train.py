@@ -357,8 +357,7 @@ def validate_and_save(
     num_updates = trainer.get_num_updates()
     max_update = cfg.optimization.max_update or math.inf
 
-    # Stopping conditions (and an additional one based on validation loss later
-    # on)
+    # Stopping conditions (and an additional one based on validation loss later on)
     should_stop = False
     if num_updates >= max_update:
         should_stop = True

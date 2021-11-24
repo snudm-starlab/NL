@@ -1,5 +1,6 @@
 """
-The main file used to train student and teacher models. Mainly based on [GitHub repository](https://github.com/intersun/PKD-for-BERT-Model-Compression) for [Patient Knowledge Distillation for BERT Model Compression](https://arxiv.org/abs/1908.09355).
+The main file used to train student and teacher models. Mainly based on [GitHub repository](https://github.com/intersun/PKD-for-BERT-Model-Compression) 
+for [Patient Knowledge Distillation for BERT Model Compression](https://arxiv.org/abs/1908.09355).
 """
 
 import logging
@@ -29,7 +30,6 @@ logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message
                     datefmt='%m/%d/%Y %H:%M:%S',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
-
 
 #########################################################################
 # Prepare Parser

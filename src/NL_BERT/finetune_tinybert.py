@@ -332,7 +332,6 @@ if args.do_train:
 #########################################################################
 # Model Training
 #########################################################################
-# output_model_file = '{}_nlayer.{}_lr.{}_T.{}.alpha.{}_beta.{}_bs.{}'.format(args.task_name, args.student_hidden_layers,
 if args.do_train:
     global_step = 0
     nb_tr_steps = 0
@@ -462,7 +461,6 @@ if args.do_train:
                     for name, param in student_encoder.named_parameters():
                         if name in list_of_frozen_params:
                              L1_list.append(torch.mean(torch.abs(param)))
-    #                         print(name+": "+str(torch.mean(torch.abs(param))))
                     for i in range(len(list_of_frozen_params_L1)):
                         if L1_list[i] != list_of_frozen_params_L1[i]:
                             error +=1

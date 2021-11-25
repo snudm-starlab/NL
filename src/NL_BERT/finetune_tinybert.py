@@ -492,7 +492,6 @@ if args.do_train:
                 else:
                     print('{},{},{}'.format(epoch+1, test_res['acc'], test_res['eval_loss']), file=log_eval)
                 
-                
                 # Saving checkpoints when the conditions below are met.
                 if task_name == 'cola':
                     if test_res['mcc'] > eval_best_acc:

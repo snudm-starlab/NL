@@ -55,7 +55,6 @@ fp16_fixed = args.fp16
 learning_rate_fixed = args.learning_rate
 teacher_prediction_fixed = args.teacher_prediction
 
-#teacher_num = args.teacher_numb
 task_name_fixed = args.task
 if DEBUG:
     logger.info("IN DEBUG MODE")
@@ -75,7 +74,6 @@ if load_model_dir_fixed is not None:
     args.load_model_dir = load_model_dir_fixed
 args = complete_argument(args, args.output_dir, args.load_model_dir)
 
-    
 if train_seed_fixed is not None:
     args.train_seed = train_seed_fixed
 if saving_criterion_acc_fixed is not None:
@@ -143,7 +141,8 @@ for a in args_dict:
     
 #########################################################################
 # Prepare  Data
-##########################################################################
+#########################################################################
+
 task_name = args.task_name.lower()
 
 if task_name not in processors and 'race' not in task_name:
@@ -165,9 +164,7 @@ if args.do_train:
     read_set = 'train'
     if args.teacher_prediction is not None and args.alpha > 0:
         logger.info('loading teacher\'s prediction')
-        teacher_predictions = pickle.load(open(args.teacher_prediction, 'rb'))['train'] if args.teacher_prediction is not None else None
-        #teacher_predictions = pickle.load(open(args.real_teacher, 'rb'))['train'] if args.real_teacher is not None else logger.info("shibal")
-        
+        teacher_predictions = pickle.load(open(args.teacher_prediction, 'rb'))['train'] if args.teacher_prediction is not None else None        
         logger.info('teacher acc = %.2f, teacher loss = %.5f' % (teacher_predictions['acc']*100, teacher_predictions['loss']))
         
         teacher_predictions_ = pickle.load(open(args.teacher_prediction, 'rb'))['dev'] if args.teacher_prediction is not None else None

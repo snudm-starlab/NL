@@ -7,7 +7,6 @@
 import functools
 import importlib
 
-
 dependencies = [
     "dataclasses",
     "hydra",
@@ -17,7 +16,6 @@ dependencies = [
     "requests",
     "torch",
 ]
-
 
 # Check for required dependencies and raise a RuntimeError if any are missing.
 missing_deps = []

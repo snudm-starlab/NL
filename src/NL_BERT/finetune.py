@@ -206,6 +206,7 @@ if args.do_train:
 #########################################################################
 # Prepare model
 #########################################################################
+
 student_config = BertConfig(os.path.join(args.bert_model, 'bert_config.json'))
 if args.kd_model.lower() in ['kd', 'kd.cls', 'kd.u', 'kd.i']:
     logger.info('using normal Knowledge Distillation')

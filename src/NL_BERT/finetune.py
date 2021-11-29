@@ -184,7 +184,6 @@ if args.do_train:
                                                                       batch_size=args.train_batch_size,
                                                                       knowledge=teacher_predictions['pred_logit'],
                                                                       extra_knowledge=teacher_predictions['feature_maps'])
-
     else:
         if args.alpha > 0:
             raise ValueError('please specify teacher\'s prediction file for KD training')

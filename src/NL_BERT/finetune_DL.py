@@ -345,7 +345,6 @@ if args.do_train:
                              warmup=args.warmup_proportion,
                              t_total=num_train_optimization_steps)
 
-
 #########################################################################
 # Model Training
 #########################################################################

@@ -496,7 +496,7 @@ if args.do_train:
                 logger.info("*"*77)
                 raise ValueError("Skipping the rest.")
                     
-        #Save a trained model and the associated configuration
+        # Save a trained model and the associated configuration
             if (global_step % 2 == 0) & (epoch > 1): 
                 if 'race' in task_name:
                     result = eval_model_dataloader_nli(student_encoder, student_classifier, eval_dataloader, device, False)

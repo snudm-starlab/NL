@@ -474,9 +474,7 @@ if args.do_train:
                                                                       args.warmup_proportion)
                     for param_group in optimizer.param_groups:
                         param_group['lr'] = lr_this_step
-                
-#                 else:
-                        
+                                        
                 if (global_step+1) % 50 ==0:
                     print()
                     print('*'*77)

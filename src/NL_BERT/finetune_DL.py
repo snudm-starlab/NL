@@ -476,7 +476,6 @@ if args.do_train:
                         param_group['lr'] = lr_this_step
                 
 #                 else:
-#                     lr_this_step = args.learning_rate * warmup_linear(global_step / num_train_optimization_steps, args.warmup_proportion)                    
                         
                 if (global_step+1) % 50 ==0:
                     print()

@@ -169,7 +169,6 @@ if args.do_train:
         
         logger.info('teacher acc = %.2f, teacher loss = %.5f' % (teacher_predictions_['acc']*100, teacher_predictions_['loss']))
         
-        
         if args.kd_model == 'kd':
             train_examples, train_dataloader, _ = get_task_dataloader(task_name, read_set, tokenizer, args, SequentialSampler,
                                                                       batch_size=args.train_batch_size,

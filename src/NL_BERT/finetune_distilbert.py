@@ -17,7 +17,7 @@ import torch.nn as nn
 from BERT.pytorch_pretrained_bert.modeling import BertConfig
 from BERT.pytorch_pretrained_bert.optimization import BertAdam, warmup_linear
 from BERT.pytorch_pretrained_bert.tokenization import BertTokenizer
-from BERT.pytorch_pretrained_bert.quantization_modules import calculate_next_quantization_parts
+from BERT.pytorch_pretrained_bert.quantization_modules import calculate_next_quantization_parts,quantization
 from utils.argument_parser import default_parser, get_predefine_argv, complete_argument
 from utils.nli_data_processing import processors, output_modes
 from utils.data_processing import init_model, get_task_dataloader, init_model_SPS_2, init_model_SPS_1
@@ -25,7 +25,6 @@ from utils.modeling import BertForSequenceClassificationEncoder, FCClassifierFor
 from utils.utils import load_model, count_parameters, eval_model_dataloader_nli, eval_model_dataloader, compute_metrics, load_model_from_distilbert
 from utils.KD_loss import distillation_loss, patience_loss
 from envs import HOME_DATA_FOLDER
-from BERT.pytorch_pretrained_bert.quantization_modules import quantization
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',
                     datefmt='%m/%d/%Y %H:%M:%S',
